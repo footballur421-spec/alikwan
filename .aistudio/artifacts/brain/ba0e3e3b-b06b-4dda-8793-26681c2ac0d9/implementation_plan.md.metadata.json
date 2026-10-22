@@ -1,0 +1,6 @@
+{
+  "summary":  "Implementation plan to restore the 4-step individual student application flow with a max 7-candidate quota per school, record bKash Cash Out sender numbers for agent 01797-267924, make student signatures optional (empty line if omitted), dynamically schedule admit card availability from the campaign admin dashboard, provide immediate downloadable Money Receipt PDFs post-submission, and polish the live Admit Card Editor with 4 customizable bottom signatures without Bismillah.",
+  "updatedAt":  "2026-10-21T14:50:00.980992718Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

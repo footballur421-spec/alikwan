@@ -1,0 +1,95 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global default-deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Security helpers
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        (request.auth.token.email != null && (
+          request.auth.token.email == 'footballur421@gmail.com' ||
+          request.auth.token.email == 'projectur76@gmail.com'
+        ))
+      );
+    }
+
+    // 1. Admin Users Directory
+    match /admins/{adminId} {
+      allow get, list: if true;
+      allow write: if isValidId(adminId);
+    }
+
+    // 2. Official Notices & Announcements (Public Read, Public/Admin Write for full CMS flexibility)
+    match /notices/{noticeId} {
+      allow get, list: if true;
+      allow write: if isValidId(noticeId);
+    }
+
+    // 3. Campaigns & Schedules
+    match /campaigns/{campaignId} {
+      allow get, list: if true;
+      allow write: if isValidId(campaignId);
+    }
+
+    // 4. Recognized Schools & Quotas
+    match /schools/{schoolId} {
+      allow get, list: if true;
+      allow write: if isValidId(schoolId);
+    }
+
+    // 5. Committee Leadership
+    match /committee/{memberId} {
+      allow get, list: if true;
+      allow write: if isValidId(memberId);
+    }
+
+    // 6. Media Gallery
+    match /gallery/{itemId} {
+      allow get, list: if true;
+      allow write: if isValidId(itemId);
+    }
+
+    // 7. System Settings, Website Content & Admit Card Design
+    match /settings/{settingId} {
+      allow get, list: if true;
+      allow write: if isValidId(settingId);
+    }
+
+    // 8. Student Applicants (Allow read, create, update, delete for application flow & admin management)
+    match /applicants/{applicantId} {
+      allow get, list: if true;
+      allow write: if isValidId(applicantId);
+    }
+
+    // 9. Payment Receipts (Allow read, create, update, delete)
+    match /receipts/{receiptId} {
+      allow get, list: if true;
+      allow write: if isValidId(receiptId);
+    }
+
+    // 10. Audit Logs
+    match /audit_logs/{logId} {
+      allow get, list: if true;
+      allow create: if isValidId(logId);
+      allow update, delete: if false;
+    }
+
+    // 11. Diagnostic Test Probes & Health Checks
+    match /test/{docId} {
+      allow get, list, write: if isValidId(docId);
+    }
+  }
+}

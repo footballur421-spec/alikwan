@@ -1,0 +1,8 @@
+{
+  "name": "Remix আল-ইখওয়ান ইসলামী সমাজ কল্যাণ সংস্থা",
+  "description": "আল-ইখওয়ান ইসলামী সমাজ কল্যাণ সংস্থা ",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

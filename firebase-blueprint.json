@@ -1,0 +1,222 @@
+{
+  "entities": {
+    "Applicant": {
+      "title": "Applicant",
+      "description": "Student scholarship applicant registration data",
+      "type": "object",
+      "properties": {
+        "applicationNo": { "type": "string", "maxLength": 50 },
+        "nameBn": { "type": "string", "maxLength": 100 },
+        "nameEn": { "type": "string", "maxLength": 100 },
+        "dob": { "type": "string", "maxLength": 20 },
+        "gender": { "type": "string", "maxLength": 20 },
+        "fatherName": { "type": "string", "maxLength": 100 },
+        "motherName": { "type": "string", "maxLength": 100 },
+        "mobile": { "type": "string", "maxLength": 20 },
+        "altMobile": { "type": "string", "maxLength": 20 },
+        "email": { "type": "string", "maxLength": 100 },
+        "schoolName": { "type": "string", "maxLength": 150 },
+        "schoolCategory": { "type": "string", "maxLength": 30 },
+        "className": { "type": "string", "maxLength": 50 },
+        "rollNo": { "type": "string", "maxLength": 20 },
+        "presentAddress": { "type": "string", "maxLength": 255 },
+        "permanentAddress": { "type": "string", "maxLength": 255 },
+        "division": { "type": "string", "maxLength": 50 },
+        "district": { "type": "string", "maxLength": 50 },
+        "upazila": { "type": "string", "maxLength": 50 },
+        "unionOrArea": { "type": "string", "maxLength": 100 },
+        "headmasterApproved": { "type": "boolean" },
+        "photoUrl": { "type": "string", "maxLength": 500000 },
+        "signatureUrl": { "type": "string", "maxLength": 500000 },
+        "declarationAccepted": { "type": "boolean" },
+        "pin": { "type": "string", "maxLength": 10 },
+        "mobileVerified": { "type": "boolean" },
+        "otpVerifiedAt": { "type": "string", "maxLength": 50 },
+        "status": { "type": "string", "maxLength": 30 },
+        "paymentStatus": { "type": "string", "maxLength": 30 },
+        "paymentMethod": { "type": "string", "maxLength": 50 },
+        "transactionId": { "type": "string", "maxLength": 50 },
+        "senderMobile": { "type": "string", "maxLength": 20 },
+        "paymentDate": { "type": "string", "maxLength": 50 },
+        "admitCardIssued": { "type": "boolean" },
+        "admitCardNo": { "type": "string", "maxLength": 50 },
+        "rollNumber": { "type": "string", "maxLength": 20 },
+        "examCenter": { "type": "string", "maxLength": 150 },
+        "examDate": { "type": "string", "maxLength": 50 },
+        "examTime": { "type": "string", "maxLength": 50 },
+        "adminNotes": { "type": "string", "maxLength": 500 },
+        "isTest": { "type": "boolean" },
+        "campaignId": { "type": "string", "maxLength": 50 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["applicationNo", "nameBn", "mobile", "schoolName", "status"]
+    },
+    "PaymentReceipt": {
+      "title": "PaymentReceipt",
+      "description": "Money receipt issued upon scholarship fee payment",
+      "type": "object",
+      "properties": {
+        "receiptNo": { "type": "string", "maxLength": 50 },
+        "applicationNo": { "type": "string", "maxLength": 50 },
+        "applicantName": { "type": "string", "maxLength": 100 },
+        "schoolName": { "type": "string", "maxLength": 150 },
+        "className": { "type": "string", "maxLength": 50 },
+        "amount": { "type": "number" },
+        "paymentMethod": { "type": "string", "maxLength": 50 },
+        "transactionId": { "type": "string", "maxLength": 50 },
+        "senderMobile": { "type": "string", "maxLength": 20 },
+        "paidAt": { "type": "string", "maxLength": 50 },
+        "status": { "type": "string", "maxLength": 30 }
+      },
+      "required": ["receiptNo", "applicationNo", "amount"]
+    },
+    "AuditLog": {
+      "title": "AuditLog",
+      "description": "Administrative audit trail",
+      "type": "object",
+      "properties": {
+        "action": { "type": "string", "maxLength": 100 },
+        "targetId": { "type": "string", "maxLength": 100 },
+        "details": { "type": "string", "maxLength": 500 },
+        "performedBy": { "type": "string", "maxLength": 100 },
+        "timestamp": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["action", "targetId", "performedBy"]
+    },
+    "Campaign": {
+      "title": "Campaign",
+      "description": "Scholarship examination campaign definition",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 50 },
+        "title": { "type": "string", "maxLength": 150 },
+        "slug": { "type": "string", "maxLength": 100 },
+        "year": { "type": "number" },
+        "description": { "type": "string", "maxLength": 1000 },
+        "bannerUrl": { "type": "string", "maxLength": 500 },
+        "applicationStartDate": { "type": "string", "maxLength": 30 },
+        "applicationEndDate": { "type": "string", "maxLength": 30 },
+        "examDate": { "type": "string", "maxLength": 30 },
+        "examTime": { "type": "string", "maxLength": 50 },
+        "admitAvailableDate": { "type": "string", "maxLength": 50 },
+        "venueName": { "type": "string", "maxLength": 150 },
+        "venueAddress": { "type": "string", "maxLength": 200 },
+        "feeAmount": { "type": "number" },
+        "maxQuotaPerSchool": { "type": "number" },
+        "status": { "type": "string", "maxLength": 30 },
+        "isFeaturedOnHome": { "type": "boolean" }
+      },
+      "required": ["id", "title", "year"]
+    },
+    "RecognizedSchool": {
+      "title": "RecognizedSchool",
+      "description": "Recognized primary or madrasa institution",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 50 },
+        "name": { "type": "string", "maxLength": 150 },
+        "type": { "type": "string", "maxLength": 50 },
+        "category": { "type": "string", "maxLength": 30 },
+        "upazila": { "type": "string", "maxLength": 50 },
+        "district": { "type": "string", "maxLength": 50 },
+        "eiin": { "type": "string", "maxLength": 30 },
+        "maxQuota": { "type": "number" }
+      },
+      "required": ["id", "name", "category"]
+    },
+    "CommitteeMember": {
+      "title": "CommitteeMember",
+      "description": "Organization executive and scholarship committee member",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 50 },
+        "name": { "type": "string", "maxLength": 100 },
+        "designation": { "type": "string", "maxLength": 100 },
+        "period": { "type": "string", "maxLength": 50 },
+        "mobile": { "type": "string", "maxLength": 30 },
+        "photoUrl": { "type": "string", "maxLength": 500 },
+        "order": { "type": "number" }
+      },
+      "required": ["id", "name", "designation"]
+    },
+    "GalleryItem": {
+      "title": "GalleryItem",
+      "description": "Historical scholarship exam media item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 50 },
+        "title": { "type": "string", "maxLength": 150 },
+        "category": { "type": "string", "maxLength": 50 },
+        "year": { "type": "string", "maxLength": 20 },
+        "imageUrl": { "type": "string", "maxLength": 500 },
+        "caption": { "type": "string", "maxLength": 300 }
+      },
+      "required": ["id", "title", "imageUrl"]
+    },
+    "SystemSetting": {
+      "title": "SystemSetting",
+      "description": "Global exam and organization configuration document",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 50 },
+        "payload": { "type": "string", "maxLength": 100000 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "payload"]
+    },
+    "Notice": {
+      "title": "Notice",
+      "description": "Official institutional notices and scholarship circulars",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 50 },
+        "title": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string", "maxLength": 50 },
+        "date": { "type": "string", "maxLength": 30 },
+        "content": { "type": "string", "maxLength": 5000 },
+        "isPinned": { "type": "boolean" },
+        "fileUrl": { "type": "string", "maxLength": 500 }
+      },
+      "required": ["id", "title", "content"]
+    }
+  },
+  "firestore": {
+    "/applicants/{applicantId}": {
+      "schema": "Applicant",
+      "description": "Registered students for scholarship examination"
+    },
+    "/receipts/{receiptId}": {
+      "schema": "PaymentReceipt",
+      "description": "Electronic money receipts for fee payments"
+    },
+    "/audit_logs/{logId}": {
+      "schema": "AuditLog",
+      "description": "Administrative actions and status updates audit trail"
+    },
+    "/campaigns/{campaignId}": {
+      "schema": "Campaign",
+      "description": "Scholarship campaigns and examination schedules"
+    },
+    "/schools/{schoolId}": {
+      "schema": "RecognizedSchool",
+      "description": "Recognized schools and quotas"
+    },
+    "/committee/{memberId}": {
+      "schema": "CommitteeMember",
+      "description": "Organization and scholarship committee executive board"
+    },
+    "/gallery/{itemId}": {
+      "schema": "GalleryItem",
+      "description": "Photo and event gallery items"
+    },
+    "/notices/{noticeId}": {
+      "schema": "Notice",
+      "description": "Official institutional notices and scholarship circulars"
+    },
+    "/settings/{settingId}": {
+      "schema": "SystemSetting",
+      "description": "System settings and admit card design state"
+    }
+  }
+}

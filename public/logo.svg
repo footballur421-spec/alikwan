@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 550" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Red Stroke & Main Blue Triangular Body -->
+  <polygon 
+    points="250,20 480,520 20,520" 
+    fill="#00A3E0" 
+    stroke="#E52320" 
+    stroke-width="6" 
+    stroke-linejoin="round"
+  />
+
+  <!-- Inner Thin White Triangular Inset -->
+  <polygon 
+    points="250,42 460,502 40,502" 
+    fill="none" 
+    stroke="#FFFFFF" 
+    stroke-width="3" 
+    stroke-linejoin="round"
+  />
+
+  <!-- Horizontal White Separator Bar for AEISS Section -->
+  <line 
+    x1="93" 
+    y1="405" 
+    x2="407" 
+    y2="405" 
+    stroke="#FFFFFF" 
+    stroke-width="3" 
+  />
+
+  <!-- Top Motto: "শিক্ষা" (Education) -->
+  <text 
+    x="250" 
+    y="182" 
+    fill="#FFFFFF" 
+    font-family="'Hind Siliguri', 'Noto Serif Bengali', Arial, sans-serif" 
+    font-weight="700" 
+    font-size="40" 
+    text-anchor="middle"
+    letter-spacing="1"
+  >
+    শিক্ষা
+  </text>
+
+  <!-- Central White Oval -->
+  <ellipse 
+    cx="250" 
+    cy="285" 
+    rx="102" 
+    ry="64" 
+    fill="#FFFFFF" 
+  />
+
+  <!-- Arabic Calligraphy "الله" (Allah) - Pure Vector Representation with text fallback -->
+  <g fill="#000000">
+    <!-- Tashkeel (Shaddah and Dagger Alif above) -->
+    <path d="M236,242 C238,240 241,240 243,243 C245,246 244,249 241,250 C238,251 235,249 234,246 Z" />
+    <path d="M248,236 C248,232 251,228 253,228 C255,228 257,232 256,238 L254,246 C253,248 250,248 249,246 Z" />
+    <path d="M242,248 C244,245 248,245 250,248 C252,251 254,248 257,246 C259,244 262,246 261,249 C259,253 255,255 251,253 C248,255 244,253 242,248 Z" />
+    
+    <!-- Alif (rightmost vertical stroke) -->
+    <path d="M285,250 C285,244 281,240 276,240 C272,240 269,244 269,250 L270,302 C270,307 273,310 277,310 C282,310 285,306 285,302 Z" />
+    
+    <!-- First Lam -->
+    <path d="M260,245 C260,241 257,238 253,238 C249,238 246,241 246,246 L247,294 C247,300 243,303 238,303 C234,303 231,299 231,293 L232,248 C232,243 229,240 225,240 C221,240 218,243 218,248 L218,295 C218,308 227,316 238,316 C250,316 259,307 260,296 Z" />
+    
+    <!-- Second Lam & Ha loop -->
+    <path d="M232,248 C232,243 229,240 225,240 C221,240 218,243 218,248 L218,295 C218,304 213,308 205,308 C198,308 193,302 193,293 C193,281 202,274 210,274 C213,274 215,272 215,269 C215,266 213,264 210,264 C196,264 183,276 183,293 C183,310 193,318 206,318 C218,318 227,311 230,301 L232,248 Z" />
+
+    <text
+      x="250"
+      y="306"
+      fill="#000000"
+      font-family="'Amiri', 'Scheherazade New', 'Traditional Arabic', serif"
+      font-size="82"
+      font-weight="bold"
+      text-anchor="middle"
+      opacity="0.95"
+    >
+      الله
+    </text>
+  </g>
+
+  <!-- Left Motto: "ঐক্য" (Unity) -->
+  <text 
+    x="138" 
+    y="386" 
+    fill="#FFFFFF" 
+    font-family="'Hind Siliguri', 'Noto Serif Bengali', Arial, sans-serif" 
+    font-weight="700" 
+    font-size="34" 
+    text-anchor="middle"
+  >
+    ঐক্য
+  </text>
+
+  <!-- Right Motto: "সমাজসেবা" (Social Service) -->
+  <text 
+    x="346" 
+    y="386" 
+    fill="#FFFFFF" 
+    font-family="'Hind Siliguri', 'Noto Serif Bengali', Arial, sans-serif" 
+    font-weight="700" 
+    font-size="33" 
+    text-anchor="middle"
+  >
+    সমাজসেবা
+  </text>
+
+  <!-- Bottom AEISS Banner: "A E I S S" -->
+  <text 
+    x="250" 
+    y="478" 
+    fill="#000000" 
+    font-family="'Arial Black', 'Arial', 'Helvetica Neue', sans-serif" 
+    font-weight="900" 
+    font-size="58" 
+    text-anchor="middle"
+    letter-spacing="18"
+  >
+    AEISS
+  </text>
+</svg>

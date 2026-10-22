@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #0272A6;
+  --color-brand-blue-deep: #07243B;
+  --color-brand-blue-dark: #051827;
+  --color-brand-blue-vibrant: #0088C2;
+  --color-brand-blue-subtle: #F0F6FA;
+  --color-brand-cyan: #0099DA;
+  --color-brand-cyan-subtle: #E0F4FC;
+  --color-brand-maroon: #7B1159;
+  --color-brand-maroon-dark: #600B44;
+  --color-brand-maroon-light: #9B1D73;
+  --color-brand-maroon-subtle: #FDF2F8;
+  --color-brand-red: #D92D20;
+  --color-brand-red-subtle: #FEF3F2;
+  --color-forest: #07243B;
+  --color-charcoal: #0F172A;
+  --color-muted: #475569;
+  --color-border-subtle: #E2E8F0;
+  --font-bn: 'Noto Serif Bengali', 'Tiro Bangla', 'Hind Siliguri', 'Noto Sans Bengali', serif;
+  --font-bn-serif: 'Noto Serif Bengali', 'Tiro Bangla', serif;
+  --font-bn-headline: 'Noto Serif Bengali', 'Tiro Bangla', serif;
+  --font-bn-sans: 'Hind Siliguri', 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif-inst: 'Noto Serif Bengali', 'Source Serif 4', Georgia, serif;
+  --font-sans-inst: 'Plus Jakarta Sans', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-arabic: 'Amiri', 'Scheherazade New', serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Noto Sans Bengali', monospace;
+}
+
+:root {
+  font-family: var(--font-bn);
+  color: #0F172A;
+  background-color: #F8FAFC;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+}
+
+.font-serif-bn {
+  font-family: var(--font-bn-serif);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.font-headline-bn {
+  font-family: var(--font-bn-headline);
+}
+
+.font-sans-bn {
+  font-family: var(--font-bn-sans);
+}
+
+.font-serif-inst {
+  font-family: var(--font-serif-inst);
+}
+
+.font-sans-inst {
+  font-family: var(--font-sans-inst);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+/* Base interactive focus & button states */
+input, select, textarea, button {
+  font-family: inherit;
+}
+
+input::placeholder, textarea::placeholder {
+  font-family: var(--font-bn);
+  color: #94A3B8;
+  opacity: 1;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #0284C7 !important;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* Clean formal print styles for official Admit Card and Money Receipt */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-card {
+    border: 2px solid #072C4C !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin: 0 auto;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .print-sheet {
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 6mm 6mm !important;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+}
